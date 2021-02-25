@@ -9,10 +9,10 @@ squeaker = User.create(username: "Squeaker", user_image:"data:image/jpeg;base64,
 
 # Games For Seed Data
 
-Game.create(title: "Lady Racer", game_image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCNBsiztnmyeOTdes6R8dqtrxEfkawsJBRsw&usqp=CAU", blurb: "Who says boys get to have all the fun. This high speed game catch me if you can is all about the ladies", user_id: dink.id)
+Game.create(title: "Lady Racer", game_image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCNBsiztnmyeOTdes6R8dqtrxEfkawsJBRsw&usqp=CAU", blurb: "Who says boys get to have all the fun. This high speed game catch me if you can is all about the ladies", genre: "Racing", user_id: dink.id)
 
-Game.create(title: "Heros for Hire", game_image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_wfQYcwHNIVaSxdAY328ni2SOtJOHKBtt_g&usqp=CAU", blurb: " Who says good guys can't change. This game allows you to hire any hero of your choice for any job. Build up the city or take it over with the hero of your choice.", user_id: peanut.id)
+Game.create(title: "Heros for Hire", game_image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_wfQYcwHNIVaSxdAY328ni2SOtJOHKBtt_g&usqp=CAU", blurb: " Who says good guys can't change. This game allows you to hire any hero of your choice for any job. Build up the city or take it over with the hero of your choice.", genre: "RPG", user_id: peanut.id)
 
-Game.create(title: "Tiny Adventures", game_image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMWkr7hGxqOMSxy-KdavbZP0LTOAdcRI2tsA&usqp=CAU", blurb: "Tiny people big adventure as you run, jump, and find your way through village trials to take your place with the pack", user_id: beep.id)
+Game.create(title: "Tiny Adventures", game_image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMWkr7hGxqOMSxy-KdavbZP0LTOAdcRI2tsA&usqp=CAU", blurb: "Tiny people big adventure as you run, jump, and find your way through village trials to take your place with the pack", genre: "Adventure", user_id: beep.id)
 
-Game.create(title: "Learning Fun", game_image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSC3vzmPcwHmFXX2m1cgM-NpSL1cI_ez21Kxw&usqp=CAU", blurb: "Come learn your abc, 123...and more in this game of song and dance centered around learning", user_id: squeaker.id)
+Game.create(title: "Learning Fun", game_image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSC3vzmPcwHmFXX2m1cgM-NpSL1cI_ez21Kxw&usqp=CAU", blurb: "Come learn your abc, 123...and more in this game of song and dance centered around learning", genre: "RPG", user_id: squeaker.id)
