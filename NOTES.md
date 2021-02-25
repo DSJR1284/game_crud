@@ -17,5 +17,10 @@ What attribute does my game need?
 What does my user model need? 
   Relationship: User has_many games, Games belongs_to user. 
 
-What views do I want my user to have?
+What views do I want my app to have?
+  -Welcome Page (Allow the user to navagate throguh the app to desired page)
+      -Game Page, - Profile Page, Logout Button
+  -Game Page (Shows a collection of all the games)
+  -Profile Page (User have there own personal page with just there game)
+      Create, Edit, Delete Games. 
 
