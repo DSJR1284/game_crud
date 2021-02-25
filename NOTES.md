@@ -11,7 +11,8 @@ What attribute does my user need?
   -Password_Digest (string)
 What attribute does my game need? 
   -Title (string)
-  -Type (Checkboxes)
+  -Game_image? (string)
+  -Type (string)
   -Blurb (text)
   -User_id (forigen key)
 
