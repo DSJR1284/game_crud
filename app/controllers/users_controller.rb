@@ -16,7 +16,6 @@ class UsersController < ApplicationController
 
   # POST: /users
   post "/users" do
-    binding.pry
     redirect "/users/index"
   end
 
