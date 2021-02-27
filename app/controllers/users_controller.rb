@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 
   # GET: /users
   get "/users" do
-    erb :"/users/index"
+    erb :"/users/login"
   end
 
   # GET: /users/new
