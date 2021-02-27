@@ -12,7 +12,7 @@ class UsersController < ApplicationController
 
   # POST: /users
   post "/users" do
-    redirect "/users"
+    redirect "/users/index"
   end
 
   # GET: /users/5
@@ -32,6 +32,8 @@ class UsersController < ApplicationController
 
   # DELETE: /users/5/delete
   delete "/users/:id/delete" do
-    redirect "/users"
+    session.clear
+    redirect "/"
   end
+  
 end
