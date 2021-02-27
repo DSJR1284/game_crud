@@ -10,6 +10,10 @@ class UsersController < ApplicationController
     erb :"/users/new"
   end
 
+  post '/login' do 
+    erb :"/users/login"
+  end 
+
   # POST: /users
   post "/users" do
     redirect "/users/index"
