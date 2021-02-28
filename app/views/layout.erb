@@ -17,21 +17,24 @@
     <div class="wrapper">
 
         <%= yield %>
-        <div class= "nav">
-        <% if logged_in? %>
 
-         <form action="/games" method="get">
-           <h3><input type="submit" value="Game Hub"></h3>
-         </form>
-        <br><br>
-        <form action="/games/new" method="get">
-          <input type="submit" value="Creation Center">
-        </form>
-        <br><br>
-        <form action="/logout" method="get">
-          <input type="submit" value="Game Over">
-        </form>
-      <% end %>
+        <div class= "nav">
+            <% if logged_in? %>
+
+               <form action="/games" method="get">
+                 <input type="submit" value="Game Hub">
+              </form>
+                <br><br>
+              <form action="/games/new" method="get">
+                <input type="submit" value="Creation Center">
+              </form>
+              <br><br>
+              <form action="/logout" method="get">
+                <input type="submit" value="Game Over">
+              </form>
+          <% end %>
+        </div>
+
       <footer class="branding">
         <small>&copy; 2021 <strong>GCC</strong></small>
       </footer>
