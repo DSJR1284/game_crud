@@ -18,7 +18,7 @@ class UsersController < ApplicationController
   end
 
   get '/users/:id' do 
-    erb :"/users/index"
+    erb :"/users/"
   end   
 
   get  "/logout" do
