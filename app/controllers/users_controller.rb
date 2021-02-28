@@ -5,26 +5,25 @@ class UsersController < ApplicationController
     erb :"/users/signup"
   end
 
-  post "/signup" do 
-   
+  post "/signup" do     
+      erb :"/user/login"   
   end 
   
   get "/login" do
-      erb :"/users/login"
+    erb :"/users/login"
   end
 
-  post "/login" do   
-  
+  post "/login" do 
+    erb :"/user/index"
   end
 
-  
-  get "user/:id" do 
-  
-  end 
+  get '/users/:id' do 
+    erb :"/users/index"
+  end   
 
   get  "/logout" do
     session.clear
     redirect "/"
   end
-  
-end
+
+end 
