@@ -18,9 +18,16 @@
 
         <%= yield %>
         <div class= "nav">
-        <%if logged_in? %>
+        <% if logged_in? %>
 
-
+         <form action="/games" method="get">
+           <h3><input type="submit" value="Game Hub"></h3>
+         </form>
+        <br><br>
+        <form action="/games/new" method="get">
+          <input type="submit" value="Creation Center">
+        </form>
+        <br><br>
         <form action="/logout" method="get">
           <input type="submit" value="Game Over">
         </form>
