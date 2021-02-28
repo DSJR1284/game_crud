@@ -1,44 +1,38 @@
 class UsersController < ApplicationController
-
-  # GET: /users
-  get "/users" do
-    erb :"/users/login"
+  
+  
+  get "/signup" do
+    erb :"/users/signup"
   end
 
-  # GET: /users/new
-  get "/users/new" do
-    erb :"/users/new"
+  post "/signup" do 
+    User.new(params)
+    if params[:username] == "" || params[:password] == "" || params[:user_image] == ""
+      flash[:error] = "Invalid Inputs Please Try Again"
+      redirect "/"
+    else
+      user = User.save
+      session[:user_id] = @user.id
+      redirect "/login"
+    end
+  end 
+  
+  get "/login" do
+      erb :"/users/login"
   end
 
-
-  # POST: /users
-  post "/users" do
-    @user = User.find_by(username: params[:username])
+  post "/login" do   
+    @user = User.find_by_username(params[:username]) 
     if @user && user.authenticate(params[:password])
       session[:user_id] = @user.id
+      
       redirect "/users/index"
     else 
-      redirect "/users"
+      redirect "/login"
     end 
   end
 
-  # GET: /users/5
-  get "/users/:id" do
-    erb :"/users/index"
-  end
-
-  # GET: /users/5/edit
-  get "/users/:id/edit" do
-    erb :"/users/edit"
-  end
-
-  # PATCH: /users/5
-  patch "/users/:id" do
-    redirect "/users/:id"
-  end
-
-  # DELETE: /users/5/delete
-  delete "/users/:id/delete" do
+  get  "/logout" do
     session.clear
     redirect "/"
   end
