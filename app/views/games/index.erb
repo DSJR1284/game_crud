@@ -1,9 +1,10 @@
 <h1>GCC Hub</h1>
 <br><br>
 <% @games.each do |game|%>
-<h2><a href="/game/<%= game.id%>"><br><%= game.title %></a></h2>
+<h2><a href="/games/<%= game.id%>"><br><%= game.title %></a></h2>
 <br>
 <img src="<%= game.game_image %>" alt="<%= game.title %>" height ="250" width="250"><br>
 <h3><%= game.blurb %></h3>
+<h3><%= game.genre %></h3>
 <br>
 <% end %>
