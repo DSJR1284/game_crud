@@ -3,7 +3,7 @@
 <% @games.each do |game|%>
 <h2><a href="/game/<%= game.id%>"><br><%= game.title %></a></h2>
 <br>
-<img src="<%= game.game_image %>" alt="<%= game.title %>"><br>
+<img src="<%= game.game_image %>" alt="<%= game.title %>" height ="250" width="250"><br>
 <h3><%= game.blurb %></h3>
 <br>
 <% end %>
