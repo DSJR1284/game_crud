@@ -1,1 +1,9 @@
-<h1>This is the Model's index page.</h1>
+<h1>GCC Hub</h1>
+<br><br>
+<% @games.each do |game|%>
+<h2><a href="/game/<%= game.id%>"><br><%= game.title %></a></h2>
+<br>
+<img src="<%= game.game_image %>" alt="<%= game.title %>"><br>
+<h3><%= game.blurb %></h3>
+<br>
+<% end %>
