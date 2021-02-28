@@ -10,18 +10,21 @@ class UsersController < ApplicationController
     erb :"/users/new"
   end
 
-  post 'users/login' do 
-    erb :"/users/login"
-  end 
 
   # POST: /users
   post "/users" do
-    redirect "/users/index"
+    @user = User.find_by(username: params[:username])
+    if @user && user.authenticate(params[:password])
+      session[:user_id] = @user.id
+      redirect "/users/index"
+    else 
+      redirect "/users"
+    end 
   end
 
   # GET: /users/5
   get "/users/:id" do
-    erb :"/users/show"
+    erb :"/users/index"
   end
 
   # GET: /users/5/edit
