@@ -22,15 +22,20 @@ class UsersController < ApplicationController
   post "/login" do
     user = User.find_by_username(params[:username])
     if user && user.authenticate(params[:password])
-      session[user_id] = user.id
-      redirect " "
+      session[:user_id] = user.id
+      redirect "/users/#{user.id}"
     else
-      redirect '/login'
+      redirect "/login"
     end 
   end
 
   get '/users/:id' do 
-    erb :"/users/"
+    if logged_in?
+     user = User.find_by_id(params[:id])      
+       redirect "/games "
+    else
+      redirect '/'
+    end 
   end   
 
   get  "/logout" do
