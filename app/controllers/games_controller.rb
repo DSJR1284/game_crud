@@ -13,7 +13,8 @@ class GamesController < ApplicationController
 
   # POST: /games
   post "/games" do
-    redirect "/games"
+    game = Game.create(title: params[:title], game_image: params[:game_image], blurb: params[:blurb], user_id: current_user.id)
+    redirect "/games/#{game.id}"
   end
 
   # GET: /games/5
