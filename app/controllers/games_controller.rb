@@ -38,6 +38,8 @@ class GamesController < ApplicationController
 
   # DELETE: /games/5/delete
   delete "/games/:id/delete" do
+    @games = Game.find_by_id(params[:id])
+    @games.destroy
     redirect "/games"
   end
 
