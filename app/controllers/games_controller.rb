@@ -32,7 +32,7 @@ class GamesController < ApplicationController
   # PATCH: /games/5
   patch "/games/:id" do
     @games = Game.find_by_id(params[:id])
-    @games.update(title: params[:title], game_image: params[:game_image], blurb: params[:blurb])
+    @games.update(title: params[:title], game_image: params[:game_image], genre: params[:genre], blurb: params[:blurb])
     redirect "/games/#{@games.id}"
   end
 
