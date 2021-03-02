@@ -26,7 +26,7 @@ class UsersController < ApplicationController
       session[:user_id] = user.id
       redirect "/users/#{user.id}"
     else
-      flash[:error] = Invlaid Crenditals Please Try Again
+      flash[:msg] = "Invlaid Crenditals Please Try Again"
       redirect "/login"
     end 
   end
