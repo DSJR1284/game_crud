@@ -15,12 +15,12 @@
   </head>
   <body>
     <div class="wrapper">
-
-    <% flash.keys.each do |type| %>
-     <div data-alert class="flash <%= type %> alert-box radius">
-      <%= flash[type] %> 
-    </div>
-    <% end %> 
+        <% flash.keys.each do |type| %>
+          <div data-alert class="flash <%= type %> alert-box radius">
+            <%= flash[type] %> 
+          </div>
+        <% end %> 
+        
         <%= yield %>
 
         <div class= "nav">

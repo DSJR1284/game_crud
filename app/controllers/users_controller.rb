@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   post "/signup" do 
       user = User.new(params)
       if user.username == "" ||  user.password == "" || user.user_image == ""
-        flash[:error] = "Invalid Inputs Please Try Again."
+        flash[:error] = "Please Reload Sign Up Credentials."
         redirect "/signup"
       else 
         user.save
@@ -26,7 +26,7 @@ class UsersController < ApplicationController
       session[:user_id] = user.id
       redirect "/users/#{user.id}"
     else
-      flash[:msg] = "Invlaid Crenditals Please Try Again"
+      flash[:error] = "Please Reboot Login Credentials."
       redirect "/login"
     end 
   end

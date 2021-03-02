@@ -13,8 +13,13 @@ class GamesController < ApplicationController
 
   # POST: /games
   post "/games" do
-    games = Game.create(title: params[:title], game_image: params[:game_image], blurb: params[:blurb], genre: params[:genre]  ,user_id: current_user.id)
+    game = Game.new(title: params[:title], game_image: params[:game_image], blurb: params[:blurb], genre: params[:genre]  ,user_id: current_user.id)
+    if game.save 
     redirect "/games/#{games.id}"
+    else 
+      flash[:error] = "Load Error Reinsert Game Data." 
+      redirect "/games/new"
+    end 
   end
 
   # GET: /games/5
