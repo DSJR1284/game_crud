@@ -1,12 +1,16 @@
 <h1>GCC Hub</h1>
 <br><br>
 <% @games.each do |game|%>
-<h2><a href="/games/<%= game.id%>"><br><%= game.title %></a></h2>
+<h2><%= game.title %></h2>
 <br>
 <img src="<%= game.game_image %>" height ="250" width="250"><br>
 <h3><%= game.blurb %></h3>
 <h3><%= game.genre %></h3>
 <br>
-<h3><%= current_user.username %></h3>
-<% end %>
+<h3><%= game.user.username %>
 <br>
+<%if game.user == current_user %>
+    <a href = "/games/<%=game.id%>/edit">Level Up Your Game</a>
+    <% end %>
+<% end %>
+<br><br>

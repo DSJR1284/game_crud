@@ -31,7 +31,9 @@ class GamesController < ApplicationController
   # GET: /games/5/edit
   get "/games/:id/edit" do
     @games = Game.find_by_id(params[:id])
+    if @games.user == current_user
     erb :"/games/edit"
+    end 
   end
 
   # PATCH: /games/5
