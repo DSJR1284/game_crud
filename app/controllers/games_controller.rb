@@ -15,7 +15,7 @@ class GamesController < ApplicationController
   post "/games" do
     game = Game.new(title: params[:title], game_image: params[:game_image], blurb: params[:blurb], genre: params[:genre]  ,user_id: current_user.id)
     if game.save 
-    redirect "/games/#{games.id}"
+    redirect "/games/#{game.id}"
     else 
       flash[:error] = "Load Error Reinsert Game Data." 
       redirect "/games/new"
@@ -54,8 +54,9 @@ class GamesController < ApplicationController
   # DELETE: /games/5/delete
   delete "/games/:id/delete" do
     @games = Game.find_by_id(params[:id])
-    @games.destroy
-    redirect "/games"
+    if @games.user == current_user
+      @games.destroy
+      redirect "/games"
   end
 
 end
