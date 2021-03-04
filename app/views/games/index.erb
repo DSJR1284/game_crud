@@ -8,7 +8,7 @@
 <h3><%= game.genre %></h3>
 <br>
 <h3><label>Gamer Name: <%= game.user.username %></label>
-<br>
+<br><br>
 <%if game.user == current_user %>
     <a href = "/games/<%=game.id%>/edit">Level Up Your Game</a>
     <% end %>
