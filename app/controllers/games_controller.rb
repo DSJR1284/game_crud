@@ -57,6 +57,7 @@ class GamesController < ApplicationController
     if @games.user == current_user
       @games.destroy
       redirect "/games"
+    end 
   end
 
 end
