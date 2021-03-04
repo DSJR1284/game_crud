@@ -17,3 +17,11 @@
     <input type="submit" value="Rerelease Your Game">
  </form>
 <br>
+
+<form method="post" action="/games/<%= @games.id %>/delete" >
+ <input type="hidden" id="hidden" name="_method" value="DELETE">
+ <input type="submit" value="Delete Game">
+</form>
+<br>
+
+

@@ -31,16 +31,24 @@ class GamesController < ApplicationController
   # GET: /games/5/edit
   get "/games/:id/edit" do
     @games = Game.find_by_id(params[:id])
-    if @games.user == current_user
-    erb :"/games/edit"
-    end 
+    if @games.user == current_user 
+      erb :"/games/edit"
+    else 
+      flash[:error]="No Going Turbo on us."
+      redirect "/games"
+    end   
   end
 
   # PATCH: /games/5
   patch "/games/:id" do
     @games = Game.find_by_id(params[:id])
-    @games.update(title: params[:title], game_image: params[:game_image], genre: params[:genre], blurb: params[:blurb])
+    if @games.user == current_user 
+      @games.update(title: params[:title], game_image: params[:game_image], genre: params[:genre], blurb: params[:blurb])
     redirect "/games/#{@games.id}"
+    else 
+      flash[:error] = "No Cross Platform Gaming Allowed"
+      redirect "/games"
+    end 
   end
 
   # DELETE: /games/5/delete
