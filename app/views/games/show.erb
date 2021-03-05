@@ -1,12 +1,12 @@
-<h1><%= @games.title %></h1>
+<h1><label>Title: <%= @games.title %></label></h1>
 <br>
 <img src="<%= @games.game_image %>"  height="150" width="150">
 <br>
-<h2><%= @games.blurb %></h2>
-<h2><%= @games.genre %></h2>
+<h2><label>Game Blurb: <%= @games.blurb %></label></h2>
+<h2><label>Game Genre: <%= @games.genre %></label></h2>
 <br>
 <form method="get" action="/games/<%= @games.id %>/edit">
-<input type="submit" value="Level Up Your Game">
+<input type="submit" value="Edit Your Game">
 </form>
 <br>
 <form method="post" action="/games/<%= @games.id %>/delete" >

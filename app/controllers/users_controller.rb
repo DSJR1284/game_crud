@@ -6,7 +6,7 @@ class UsersController < ApplicationController
 
   post "/signup" do 
       user = User.new(params)
-      if user.username == "" ||  user.password == "" || user.user_image == ""
+      if user.username == "" ||  user.password == "" || user.user_image == "" || User.find_by_username(params[:username])
         flash[:error] = "Please Reload Sign Up Credentials."
         redirect "/signup"
       else 
