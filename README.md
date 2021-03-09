@@ -21,7 +21,7 @@ This is a web app to create and display your own game.
 
 Development
 
-After checking out the repo, run bundle install to install dependencies. Then run shotgun for access to your local host in your browser.
+After checking out the repo, run bundle install to install dependencies. Set a session secret in the application controller. Then run shotgun for access to your local host in your browser.
 
 Contributing
 
