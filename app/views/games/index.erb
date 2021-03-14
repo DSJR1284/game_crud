@@ -10,14 +10,15 @@
 <br>
 <%if game.user == current_user %>
     <h3><a href = "/games/<%=game.id%>/edit">Edit Your Game</a></h3>   
-    <br>  
+    <br><br> 
     <form method="post" action="/games/<%= game.id %>/delete" >
     <input type="hidden" id="hidden" name="_method" value="DELETE">
     <input type="submit" value="Delete Game">
     </form>
     <% end %>    
 <% end %>
-<br><br>
+<br>
+
 
  
 
