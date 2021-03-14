@@ -2,14 +2,26 @@
 <br><br>
 <% @games.each do |game|%>
 <h2><label>Title: <%= game.title %></label></h2>
-<img src="<%= game.game_image %>" height ="250" width="250"><br>
+<img src="<%= game.game_image %>" height="250" width="250"><br>
 <h3><label>Game Blurb: <%= game.blurb %></label></h3>
 <h3><label>Game Genre: <%= game.genre %></label></h3>
 <br>
 <h3><label>Gamer Name: <%= game.user.username %></h3></label>
 <br>
 <%if game.user == current_user %>
-    <h3><a href = "/games/<%=game.id%>/edit">Edit Your Game</a></h3>
-    <% end %>
+    <h3><a href = "/games/<%=game.id%>/edit">Edit Your Game</a></h3>   
+    <br>  
+    <form method="post" action="/games/<%= game.id %>/delete" >
+    <input type="hidden" id="hidden" name="_method" value="DELETE">
+    <input type="submit" value="Delete Game">
+    </form>
+    <% end %>    
 <% end %>
 <br><br>
+
+ 
+
+
+
+
+

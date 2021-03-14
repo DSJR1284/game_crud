@@ -13,9 +13,8 @@ class GamesController < ApplicationController
 
   # POST: /games
   post "/games" do
-    game = Game.new(title: params[:title], game_image: params[:game_image], blurb: params[:blurb], genre: params[:genre]  ,user_id: current_user.id)
-    if Game.find_by_title(params[:title]) 
-     game.save 
+    game = Game.new(title: params[:title], game_image: params[:game_image], blurb: params[:blurb], genre: params[:genre] ,user_id: current_user.id)
+    if game.save      
     redirect "/games/#{game.id}"
     else 
       flash[:error] = "Load Error or Game Already Exsist Please Reinsert Game Data." 
@@ -55,10 +54,12 @@ class GamesController < ApplicationController
   # DELETE: /games/5/delete
   delete "/games/:id/delete" do
     @games = Game.find_by_id(params[:id])
-    if @games.user == current_user
-      @games.destroy
-      redirect "/games"
-    end 
+    @games.destroy
+    redirect "/games"
+    # if @games.user == current_user
+    #   @games.destroy
+    #   redirect "/games"
+    # end 
   end
 
 end
